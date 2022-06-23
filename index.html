@@ -6,22 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/clear-sky.png" type="image/x-icon">
 </head>
 <body>
     <div id="wrapper">
         <div id="displayWeather">
-
+            <div id="currentWeather">
+                <div id="weather">
+                    <img src="images/day/113.png" alt="weather">
+                    <p id="deg"></p>
+                </div>
+                <h1 id="locationCity"></h1>
+            </div>
+            <div id="currentTime">
+                <h1 id="time"></h1>
+                <p id="date"></p>
+            </div>
         </div>
         <div id="searchCity">
-            <form action="GET">
+            <form action="">
                 <input type="text" name="search" id="search" placeholder="Enter city...">
-                <button type="submit">
+                <button type="submit" id="submit">
                     <img src="images/search.png" alt="">
+                </button>
+                <button id="star">
+                    <img src="images/star.png" alt="" class="star">
                 </button>
             </form>
         </div>
         <div id="detailsOfCity">
-
+            <div class="color">
+                <div>
+                    <img src="images/index.png" alt="uvIndex" class="images">
+                    <h2>UV index</h2>
+                    <p id="uvIndex">low</p>
+                </div>
+                <div>
+                    <img src="images/wind.png" alt="wind" class="images">
+                    <h2>Wind</h2>
+                    <p id="wind">low</p>
+                </div>
+                <div>
+                    <img src="images/drop.png" alt="humidity" class="humidity">
+                    <h2>Humidity</h2>
+                    <p id="humidity">low</p>
+                </div>
+            </div>
+            <div class="color">
+                <h2 id="favTitle">Favorite City</h2>
+                <ul id="favs"></ul>
+            </div>
+            <div class="color"></div>
         </div>
     </div>
     <script src="weather.js"></script>
