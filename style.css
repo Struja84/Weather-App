@@ -20,6 +20,7 @@
     background-attachment: fixed;
     width: 100%;
     height: 100vh;
+    border: 5px solid  rgb(255, 255, 255, 0.3);
 }
 
 #wrapper div {
@@ -46,6 +47,9 @@
     animation-duration: 3s;
     animation-direction: normal;
 }
+#wrapper #displayWeather #currentWeather:hover {
+    transform: scale(1.1);
+}
 
 @keyframes slideFromLeft {
     from {
@@ -68,12 +72,20 @@
     justify-content: center;
 }
 
+#wrapper #displayWeather #currentWeather #weather #temperature {
+    width: fit-content;
+}
+
 #wrapper #displayWeather #currentWeather #weather img {
     width: 9em;
 }
 
-#wrapper #displayWeather #currentWeather #weather p {
+#wrapper #displayWeather #currentWeather #weather #deg {
     font-size: 3.5em;
+}
+
+#wrapper #displayWeather #currentWeather #weather #max_min {
+    font-size: 2em;
 }
 
 #wrapper #displayWeather #currentTime {
@@ -82,7 +94,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1vh;
+}
+#wrapper #displayWeather #currentTime:hover {
+    transform: scale(0.9);
 }
 
 /* Search */
@@ -90,9 +105,10 @@
 #wrapper #searchCity {
     height: 10vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* position: relative; */
+    position: relative;
 }
 
 #wrapper #searchCity form {
@@ -111,8 +127,23 @@
     border: none;
     background-color: rgb(255, 255, 255, 0);
     border-bottom: 1px solid white;
-    color: white;
+    color:whitesmoke;
     font-size: 1.5em;
+}
+
+#wrongFormat {
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 20vw;
+    font-weight: 800;
+    padding: 1em;
+    color: tomato;
+    text-align: center;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    position: absolute;
+    top: -3.25em;
+    display: none;
+    border-bottom: 2px solid white;
 }
 
 #wrapper #searchCity form input:focus {
@@ -179,14 +210,18 @@
 
 #wrapper #detailsOfCity .color #favs li {
     text-align: center;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
+    padding: 0.4em 0;
     font-size: 1.5em;
-    color: rgb(186, 216, 16);
+    color: rgb(65, 105, 225);
     position: relative;
+    border-radius: 1em;
+    font-weight: 800;
 }
 
 #wrapper #detailsOfCity .color #favs li:hover {
     background-color: rgb(255, 255, 255, 0.2);
+    border-bottom: 1px solid white;
 }
 
 #wrapper #detailsOfCity .color #favs li:hover #x {
@@ -195,6 +230,12 @@
 
 .images {
     width: 3em;
+}
+.images:hover {
+    transform: scale(1.2);
+}
+.humidity:hover {
+    transform: scale(1.2);
 }
 
 #x {
@@ -210,6 +251,43 @@
     cursor: pointer;
 }
 
+.city {
+    width: 1.2em;
+}
+
+.cityLeft {
+    margin-right: 1em;
+    animation: left ease-in-out  2s infinite;
+}
+
+@keyframes left {
+    0% {
+        margin-left: 1em;
+    }
+    100% {
+        margin-right: 2em;
+    }
+}
+
+.cityRight {
+    margin-left: 1em;
+    animation: right ease-in-out 2s  infinite;
+    
+}
+
+@keyframes right {
+    0% {
+        margin-right: 1em;
+    }
+    100% {
+        margin-left: 2em;
+    }
+}
+
 .humidity {
     width: 2.2em;
+}
+
+.remove {
+    display: none !important;
 }
