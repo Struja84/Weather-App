@@ -13,8 +13,11 @@
         <div id="displayWeather">
             <div id="currentWeather">
                 <div id="weather">
-                    <img src="images/day/113.png" alt="weather">
-                    <p id="deg"></p>
+                    <img src="images/day/113.png" alt="weather" id="weatherIcon">
+                    <div id="temperature">
+                        <p id="deg"></p>
+                        <p id="max_min">min max</p>
+                    </div>
                 </div>
                 <h1 id="locationCity"></h1>
             </div>
@@ -24,39 +27,63 @@
             </div>
         </div>
         <div id="searchCity">
+            <p id="wrongFormat">wrongFormat</p>
             <form action="">
-                <input type="text" name="search" id="search" placeholder="Enter city...">
+                <input type="text" name="search" id="search" placeholder="Enter city... (ex: Belgrade)" autocomplete="off">
                 <button type="submit" id="submit">
-                    <img src="images/search.png" alt="">
+                    <img src="images/search.png" alt="search">
                 </button>
                 <button id="star">
                     <img src="images/star.png" alt="" class="star">
+                </button>
+                <button id="location">
+                    <img src="images/location.png" alt="" class="star">
                 </button>
             </form>
         </div>
         <div id="detailsOfCity">
             <div class="color">
                 <div>
-                    <img src="images/index.png" alt="uvIndex" class="images">
+                    <img src="images/uv-index.svg" alt="uvIndex" class="images">
                     <h2>UV index</h2>
-                    <p id="uvIndex">low</p>
+                    <p id="uvIndex"></p>
                 </div>
                 <div>
-                    <img src="images/wind.png" alt="wind" class="images">
+                    <img src="images/wind1.svg" alt="wind" class="images">
                     <h2>Wind</h2>
-                    <p id="wind">low</p>
+                    <p id="wind"></p>
                 </div>
                 <div>
                     <img src="images/drop.png" alt="humidity" class="humidity">
                     <h2>Humidity</h2>
-                    <p id="humidity">low</p>
+                    <p id="humidity"></p>
                 </div>
             </div>
             <div class="color">
-                <h2 id="favTitle">Favorite City</h2>
-                <ul id="favs"></ul>
+                <h2 id="favTitle">
+                    <img src="images/cityHall.png" class="city cityLeft">Favorite City<img class=" city cityRight" src="images/cityHall.png">
+                </h2>
+                <ul id="favs">
+
+                </ul>
             </div>
-            <div class="color"></div>
+            <div class="color">
+                <div>
+                    <img src="images/barometer1.svg" alt="pressure" class="images">
+                    <h2>Pressure</h2>
+                    <p id="pressure"></p>
+                </div>
+                <div>
+                    <img src="images/visibility.png" alt="visibility" class="images">
+                    <h2>Visibility</h2>
+                    <p id="visibility"></p>
+                </div>
+                <div>
+                    <img src="images/felslike.png" alt="felslike" class="images">
+                    <h2>Feels like</h2>
+                    <p id="feelslike"></p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="weather.js"></script>
