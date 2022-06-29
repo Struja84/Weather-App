@@ -21,6 +21,7 @@
     width: 100%;
     height: 100vh;
     border: 5px solid  rgb(255, 255, 255, 0.3);
+    overflow: hidden;
 }
 
 #wrapper div {
@@ -37,28 +38,20 @@
 
 #wrapper #displayWeather #currentWeather {
     width: 100%;
-    /* display: flex; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     display: none;
-    animation-name: slideFromLeft;
-    animation-duration: 3s;
-    animation-direction: normal;
-}
-#wrapper #displayWeather #currentWeather:hover {
-    transform: scale(1.1);
+    animation: slideFromLeft 3s normal;
 }
 
 @keyframes slideFromLeft {
     from {
-      margin-left:100%;
-      width:300%
+      margin-left: -80%;
     }
     to {
-      margin-left:0%;
-      width:100%;
+      margin-left: 0%;
     }
 }
 
@@ -94,10 +87,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1vh;
+    gap: 1.5vh;
+    animation: slideFromRight 3s normal;
+    position: relative;
 }
-#wrapper #displayWeather #currentTime:hover {
-    transform: scale(0.9);
+
+@keyframes slideFromRight {
+    from {
+      margin-left: 80%;
+    }
+    to {
+      margin-left: 0;
+    }
 }
 
 /* Search */
@@ -170,11 +171,12 @@
 
 #wrapper #detailsOfCity {
     height: 50vh;
-    width: 96.5vw;
+    width: 96%;
     display: none;
     grid-template-columns: repeat(3, 1fr);
     padding: 2em;
-    margin: 1.5em;
+    margin: 0 auto;
+    margin-top: 1.5em;
     border-radius: 2em;
     background-color: rgb(255, 255, 255, 0.4);
 }
@@ -210,10 +212,8 @@
 
 #wrapper #detailsOfCity .color #favs li {
     text-align: center;
-    /* margin-bottom: 1em; */
     padding: 0.4em 0;
     font-size: 1.5em;
-    color: rgb(65, 105, 225);
     position: relative;
     border-radius: 1em;
     font-weight: 800;
@@ -257,7 +257,7 @@
 
 .cityLeft {
     margin-right: 1em;
-    animation: left ease-in-out  2s infinite;
+    animation: left ease-in-out 2s infinite;
 }
 
 @keyframes left {
@@ -271,7 +271,7 @@
 
 .cityRight {
     margin-left: 1em;
-    animation: right ease-in-out 2s  infinite;
+    animation: right ease-in-out 2s infinite;
     
 }
 
@@ -286,8 +286,4 @@
 
 .humidity {
     width: 2.2em;
-}
-
-.remove {
-    display: none !important;
 }
